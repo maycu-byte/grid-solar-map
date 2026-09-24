@@ -1,0 +1,13 @@
+{
+ "state": "Saarland",
+ "snapshot": "2025-02-09",
+ "operating_units": 56208,
+ "placed_units": 56201,
+ "unplaced_units": 7,
+ "share_exact_coordinates": 0.031,
+ "share_by_postcode": 0.969,
+ "total_net_mw": 918.0,
+ "new_mw_12m": 122.3,
+ "substations": 51,
+ "median_distance_km": 2.4
+}
