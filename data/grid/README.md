@@ -8,4 +8,6 @@
 | `flex_days.json` | Each district's worst day of 2025 for flexible plants and the share of their output allowed in each hour | `lv-grid-stress-test/regional/flexible.py` | CC BY-SA 4.0 (derived from ding0) |
 | `flexible.json` | Flexible connections above the firm capacity: energy lost over 2025, pro rata and last in first out | `lv-grid-stress-test/regional/flexible.py` | CC BY-SA 4.0 (derived from ding0) |
 
+The map layers `web/data/mv_lines.geojson`, `web/data/mvlv_transformers.geojson` and `web/data/hvmv_substations.geojson` come from `lv-grid-stress-test/regional/export_map.py` (CC BY-SA 4.0, derived from ding0); `web/data/power_lines.geojson` from OpenStreetMap (ODbL).
+
 Method, validation and limits: https://github.com/maycu-byte/lv-grid-stress-test/blob/main/docs/regional.md
