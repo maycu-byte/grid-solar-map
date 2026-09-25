@@ -1,185 +1,116 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-build="e94a6b323006">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Grid Solar Map — Saarland</title>
-<meta name="description" content="Rooftop and ground-mounted solar per 110 kV substation service area, from Germany's official power plant register.">
+<title>Grid Solar Map, Saarland</title>
+<meta name="description" content="Solar power and grid capacity behind each HV/MV substation of the Saarland: how much is installed, how much more fits, and how much more with flexible connections.">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Ccircle cx=%228%22 cy=%228%22 r=%226%22 fill=%22%23e58a1f%22/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
   :root {
-    --ground: #f4f5f2; --panel: #ffffff; --ink: #1b2320; --ink2: #4b5751; --ink3: #7a857f; --hair: #d9ded9;
-    --accent: #c77d0a; --sub: #1f5f8b;
+    --ground: #f4f5f2; --panel: #ffffff; --sunk: #eef0ec; --ink: #1b2320; --ink2: #4b5751; --ink3: #7a857f; --hair: #d9ded9;
+    --accent: #c77d0a; --sub: #1f5f8b; --good: #1f7a3a; --bad: #b3261e;
     --r0: #fff6d9; --r1: #fde29a; --r2: #f7b955; --r3: #e58a1f; --r4: #b85c08; --r5: #7a3a03;
+    --g0: #e6f0f7; --g1: #bcd6e9; --g2: #86b5d6; --g3: #4f8fbf; --g4: #2567a0; --g5: #0f3f6b;
     --sans: "IBM Plex Sans", system-ui, "Segoe UI", sans-serif; --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
   }
   @media (prefers-color-scheme: dark) {
-    :root { --ground: #121614; --panel: #1b201d; --ink: #e8ece9; --ink2: #b5bfb9; --ink3: #87928c; --hair: #2e3632; --accent: #f0a83a; --sub: #7cb8e0; }
+    :root:not([data-theme="light"]) { --ground: #121614; --panel: #1b201d; --sunk: #232925; --ink: #e8ece9; --ink2: #b5bfb9; --ink3: #87928c; --hair: #2e3632; --accent: #f0a83a; --sub: #7cb8e0; --good: #5cc07a; --bad: #ef7a70; }
   }
   * { box-sizing: border-box; }
   html, body { height: 100%; margin: 0; }
-  body { background: var(--ground); color: var(--ink); font: 15px/1.5 var(--sans); display: grid; grid-template-columns: 380px 1fr; }
-  @media (max-width: 860px) { body { grid-template-columns: 1fr; grid-template-rows: auto 70vh; } #map { order: -1; } }
-  aside { background: var(--panel); border-right: 1px solid var(--hair); padding: 22px 20px 40px; overflow-y: auto; display: flex; flex-direction: column; gap: 22px; }
-  h1 { font-size: 1.5rem; line-height: 1.2; margin: 0; letter-spacing: -.01em; }
-  h2 { font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--ink3); margin: 0 0 8px; font-weight: 600; }
+  body { background: var(--ground); color: var(--ink); font: 15px/1.5 var(--sans); display: grid; grid-template-columns: minmax(360px, 420px) 1fr; }
+  @media (max-width: 860px) { body { grid-template-columns: 1fr; grid-template-rows: 60vh auto; } #map { order: -1; min-height: 60vh; } }
+  aside { background: var(--panel); border-right: 1px solid var(--hair); padding: 18px 18px 40px; overflow-y: auto; display: flex; flex-direction: column; gap: 18px; max-height: 100vh; }
+  @media (max-width: 860px) { aside { max-height: none; } }
+  .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+  h1 { font-size: 1.45rem; line-height: 1.2; margin: 0; letter-spacing: -.01em; }
+  h2 { font-size: .76rem; text-transform: uppercase; letter-spacing: .08em; color: var(--ink3); margin: 0 0 8px; font-weight: 600; }
+  h3 { font-size: .98rem; margin: 0 0 6px; }
   p { margin: 0; color: var(--ink2); }
-  .lede { margin-top: 6px; }
-  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .stat { border: 1px solid var(--hair); border-radius: 8px; padding: 10px 12px; }
-  .stat b { display: block; font: 600 1.35rem/1.2 var(--mono); font-variant-numeric: tabular-nums; }
-  .stat span { font-size: .8rem; color: var(--ink3); }
+  .lede { margin-top: 6px; font-size: .93rem; }
+  .seg { display: flex; gap: 3px; background: var(--sunk); border-radius: 8px; padding: 3px; flex-wrap: wrap; }
+  .seg button { flex: 1; border: 0; background: transparent; color: var(--ink2); font: inherit; font-size: .85rem; padding: 5px 8px; border-radius: 6px; cursor: pointer; }
+  .seg button[aria-pressed=true] { background: var(--panel); color: var(--ink); font-weight: 600; box-shadow: 0 1px 2px rgb(0 0 0 / .12); }
+  .lang { flex: none; }
+  .tabs { position: sticky; top: -18px; background: var(--panel); padding: 6px 0; z-index: 5; }
+  .what { display: flex; flex-direction: column; gap: 6px; font-size: .88rem; }
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .stat { border: 1px solid var(--hair); border-radius: 8px; padding: 8px 10px; }
+  .stat b { display: block; font: 600 1.2rem/1.2 var(--mono); font-variant-numeric: tabular-nums; }
+  .stat span { font-size: .78rem; color: var(--ink3); }
   select { width: 100%; font: inherit; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--hair); background: var(--panel); color: var(--ink); }
   .legend { display: flex; gap: 2px; margin-top: 8px; }
   .legend i { flex: 1; height: 10px; }
   .legend-labels { display: flex; justify-content: space-between; font: .75rem var(--mono); color: var(--ink3); margin-top: 4px; }
-  ol { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 4px; }
-  ol li { cursor: pointer; color: var(--ink2); }
+  .note { font-size: .82rem; color: var(--ink3); }
+  ol { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 3px; }
+  ol li { cursor: pointer; color: var(--ink2); font-size: .9rem; }
   ol li:hover { color: var(--ink); }
-  ol li b { font-family: var(--mono); font-weight: 500; color: var(--ink); font-variant-numeric: tabular-nums; }
-  .method { font-size: .88rem; display: flex; flex-direction: column; gap: 8px; }
-  .method a, footer a { color: var(--sub); }
-  footer { font-size: .78rem; color: var(--ink3); border-top: 1px solid var(--hair); padding-top: 12px; }
+  ol li b { font-family: var(--mono); font-weight: 500; color: var(--ink); }
+  #detail { border: 1px solid var(--hair); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 8px; font-size: .88rem; }
+  #detail table { border-collapse: collapse; width: 100%; font-size: .82rem; }
+  #detail th, #detail td { text-align: right; padding: 3px 4px; border-top: 1px solid var(--hair); font-variant-numeric: tabular-nums; }
+  #detail th:first-child, #detail td:first-child { text-align: left; }
+  #detail td.hi { color: var(--bad); font-weight: 600; }
+  #detail td.lo { color: var(--good); }
+  .kv { display: grid; grid-template-columns: 1fr auto; gap: 2px 10px; }
+  .kv b { font-family: var(--mono); font-weight: 500; text-align: right; }
+  .links a, .model a, .sources a, footer a { color: var(--sub); }
+  .model { background: var(--sunk); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 6px; font-size: .86rem; }
+  .model h3 { display: flex; gap: 8px; align-items: baseline; }
+  .model .n { flex: none; display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--sub); color: #fff; font: 700 .72rem var(--sans); }
+  .model .eq { font: .8rem/1.6 var(--mono); background: var(--panel); border: 1px solid var(--hair); border-radius: 8px; padding: 6px 8px; overflow-x: auto; color: var(--ink); }
+  .model .src { font-size: .78rem; }
+  .sources { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; font-size: .86rem; }
+  .sources span { color: var(--ink3); font-size: .8rem; }
+  .kind { display: inline-block; font-size: .7rem !important; font-weight: 600; padding: 0 6px; border-radius: 8px; background: var(--sunk); }
+  .kind.real { color: var(--good) !important; } .kind.syn { color: var(--accent) !important; }
+  footer { font-size: .76rem; color: var(--ink3); border-top: 1px solid var(--hair); padding-top: 10px; }
   #map { height: 100%; min-height: 60vh; }
-  .leaflet-popup-content { font: 14px/1.45 var(--sans); }
-  .leaflet-popup-content b { font-family: var(--mono); font-weight: 500; }
+  .leaflet-tooltip { font: 13px var(--sans); }
+  [hidden] { display: none !important; }
 </style>
+<script type="importmap">{"imports": {"./app.js": "./app.js?v=e94a6b323006", "./i18n.js": "./i18n.js?v=e94a6b323006", "./blocks.js": "./blocks.js?v=e94a6b323006"}}</script>
 </head>
 <body>
 <aside>
-  <header>
-    <h1>Grid Solar Map</h1>
-    <p class="lede">How much solar power sits behind each 110&nbsp;kV substation in <span id="state">Saarland</span>, Germany — and how fast it is growing.</p>
-  </header>
+  <div class="top">
+    <div><h1 data-t="title">Grid Solar Map</h1></div>
+    <div class="seg lang" id="lang-seg" role="group" aria-label="Language"><button data-v="en" aria-pressed="true">EN</button><button data-v="pt" aria-pressed="false">PT</button><button data-v="de" aria-pressed="false">DE</button></div>
+  </div>
+  <p class="lede" data-t="lede"></p>
+  <div class="tabs"><div class="seg" id="tab-seg"><button data-v="map" aria-pressed="true" data-t="tabMap">Map</button><button data-v="models" aria-pressed="false" data-t="tabModels">Models</button><button data-v="sources" aria-pressed="false" data-t="tabSources">Sources</button></div></div>
 
-  <section>
-    <h2>Region</h2>
-    <div class="stats" id="stats"></div>
-  </section>
+  <div id="tab-map">
+    <section class="what" id="what"></section>
+    <section style="margin-top:16px"><h2 data-t="region">Region</h2><div class="stats" id="stats"></div></section>
+    <section style="margin-top:16px">
+      <h2 data-t="colourBy">Colour the map by</h2>
+      <select id="metric" aria-label="Metric"></select>
+      <div class="legend" id="legend"></div>
+      <div class="legend-labels"><span id="lmin"></span><span id="lmax"></span></div>
+    </section>
+    <section style="margin-top:14px" id="rule-box">
+      <h2 data-t="rule">Curtailment rule</h2>
+      <div class="seg" id="rule-seg"><button data-v="pro" aria-pressed="true" data-t="rulePro">Pro rata</button><button data-v="lifo" aria-pressed="false" data-t="ruleLifo">Last in, first out</button></div>
+      <p class="note" style="margin-top:6px" data-t="ruleNote"></p>
+    </section>
+    <section style="margin-top:16px" id="detail"><p class="note" data-t="clickHint"></p></section>
+    <section style="margin-top:16px"><h2 data-t="top">Top districts</h2><ol id="ranking"></ol><p class="note" id="missing" style="margin-top:6px"></p></section>
+  </div>
+  <div id="tab-models" hidden></div>
+  <div id="tab-sources" hidden></div>
 
-  <section>
-    <h2>Colour the map by</h2>
-    <select id="metric" aria-label="Metric">
-      <option value="net_mw">Installed solar (MW)</option>
-      <option value="density_kw_km2">Solar density (kW per km²)</option>
-      <option value="new_mw_12m">Added in the last 12 months (MW)</option>
-      <option value="growth_share">Growth: share added in 12 months</option>
-    </select>
-    <div class="legend" id="legend"></div>
-    <div class="legend-labels"><span id="lmin"></span><span id="lmax"></span></div>
-  </section>
-
-  <section>
-    <h2>Top service areas</h2>
-    <ol id="ranking"></ol>
-  </section>
-
-  <section class="method">
-    <h2>Method and limits</h2>
-    <p><strong>Data.</strong> Every operating solar unit in the state from Germany's official power plant register (Marktstammdatenregister), and the 110&nbsp;kV substations mapped in OpenStreetMap.</p>
-    <p><strong>Location.</strong> Larger units have exact coordinates. Small rooftop units are published without them for privacy, so they are placed at the centre of their municipality.</p>
-    <p><strong>Grid areas.</strong> The real grid topology is not public. Each unit is assigned to its nearest substation (Voronoi partition), a common first approximation, not the operator's actual feeder layout.</p>
-    <p><strong>Use.</strong> This shows where solar concentrates and grows fastest — a first screen for where grid reinforcement studies would start, not a hosting-capacity calculation.</p>
-  </section>
-
-  <footer>
-    Data: <a href="https://www.marktstammdatenregister.de" target="_blank" rel="noopener">Bundesnetzagentur, Marktstammdatenregister</a> (dl-de/by-2-0), processed by <a href="https://github.com/OpenEnergyPlatform/open-MaStR" target="_blank" rel="noopener">open-MaStR</a>; substations and boundaries © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a> (ODbL).<br>
-    Snapshot: <span id="snapshot">—</span>. Built by Michael Hiarley.
-  </footer>
+  <footer><span data-t="snapshot">Register snapshot</span>: <span id="snapshot">–</span> · <span data-t="built">Built by Michael Hiarley Silva Andrade</span> · <a href="https://github.com/maycu-byte/grid-solar-map" target="_blank" rel="noopener">GitHub</a></footer>
 </aside>
 
-<div id="map" role="region" aria-label="Map of solar capacity per substation area"></div>
+<div id="map" role="region" aria-label="Map of solar and grid capacity per district"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<script>
-const RAMP = ["--r0", "--r1", "--r2", "--r3", "--r4", "--r5"].map(v => getComputedStyle(document.documentElement).getPropertyValue(v).trim());
-const FMT = {
-  net_mw: v => v.toFixed(1) + " MW",
-  density_kw_km2: v => Math.round(v) + " kW/km²",
-  new_mw_12m: v => v.toFixed(1) + " MW",
-  growth_share: v => Math.round(v * 100) + "%",
-};
-const nf = new Intl.NumberFormat("en-GB");
-
-const map = L.map("map", { zoomSnap: 0.25 });
-// OpenStreetMap standard tiles, faded so the data layer stands out.
-L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',
-  maxZoom: 14, opacity: 0.35,
-}).addTo(map);
-
-let areasLayer, areas, breaks;
-
-function quantileBreaks(values) {
-  const v = values.filter(x => x > 0).sort((a, b) => a - b);
-  return [1, 2, 3, 4, 5].map(k => v[Math.floor((k / 6) * (v.length - 1))] ?? 0);
-}
-const colour = x => RAMP[breaks.filter(b => x > b).length];
-
-function popup(p) {
-  return `<strong>${p.name}</strong>${p.operator ? "<br><span style='color:var(--ink3)'>" + p.operator + "</span>" : ""}<br>
-    Installed solar: <b>${p.net_mw.toFixed(1)} MW</b> in <b>${nf.format(p.units)}</b> units<br>
-    Added in 12 months: <b>${p.new_mw_12m.toFixed(1)} MW</b> (${Math.round(p.growth_share * 100)}%)<br>
-    Density: <b>${Math.round(p.density_kw_km2)} kW/km²</b> · Rooftop: <b>${Math.round(p.rooftop_share * 100)}%</b><br>
-    Service area: <b>${p.area_km2} km²</b>`;
-}
-
-function render(metric) {
-  const values = areas.features.map(f => f.properties[metric]);
-  breaks = quantileBreaks(values);
-  if (areasLayer) areasLayer.remove();
-  areasLayer = L.geoJSON(areas, {
-    style: f => ({ fillColor: colour(f.properties[metric]), fillOpacity: 0.78, color: "#ffffff", weight: 1 }),
-    onEachFeature: (f, layer) => {
-      layer.bindPopup(popup(f.properties));
-      layer.on({ mouseover: e => e.target.setStyle({ weight: 2.5, color: "#1b2320" }), mouseout: e => areasLayer.resetStyle(e.target) });
-    },
-  }).addTo(map);
-  areasLayer.bringToBack();
-
-  document.getElementById("legend").innerHTML = RAMP.map(c => `<i style="background:${c}"></i>`).join("");
-  document.getElementById("lmin").textContent = FMT[metric](Math.min(...values));
-  document.getElementById("lmax").textContent = FMT[metric](Math.max(...values));
-
-  const top = [...areas.features].sort((a, b) => b.properties[metric] - a.properties[metric]).slice(0, 10);
-  document.getElementById("ranking").innerHTML = top.map(f =>
-    `<li data-id="${f.properties.id}">${f.properties.name} — <b>${FMT[metric](f.properties[metric])}</b></li>`).join("");
-  document.querySelectorAll("#ranking li").forEach(li => li.addEventListener("click", () => {
-    areasLayer.eachLayer(l => { if (l.feature.properties.id === li.dataset.id) { map.fitBounds(l.getBounds(), { maxZoom: 11 }); l.openPopup(); } });
-  }));
-}
-
-Promise.all(["data/areas.geojson", "data/substations.geojson", "data/summary.json"].map(u => fetch(u).then(r => r.json())))
-  .then(([a, subs, s]) => {
-    areas = a;
-    document.getElementById("state").textContent = s.state;
-    document.getElementById("snapshot").textContent = s.snapshot;
-    document.getElementById("stats").innerHTML = [
-      [nf.format(s.operating_units), "operating solar units"],
-      [nf.format(s.total_net_mw) + " MW", "installed (net)"],
-      [nf.format(s.new_mw_12m) + " MW", "added in 12 months"],
-      [s.substations, "110 kV substations"],
-    ].map(([b, t]) => `<div class="stat"><b>${b}</b><span>${t}</span></div>`).join("");
-
-    render("net_mw");
-    L.geoJSON(subs, {
-      pointToLayer: (f, ll) => L.circleMarker(ll, { radius: 4, color: "#ffffff", weight: 1.5, fillColor: getComputedStyle(document.documentElement).getPropertyValue("--sub"), fillOpacity: 1 }),
-      onEachFeature: (f, l) => l.bindTooltip(f.properties.name),
-    }).addTo(map);
-    map.fitBounds(areasLayer.getBounds(), { padding: [10, 10] });
-  })
-  .catch(err => { document.getElementById("stats").textContent = "Could not load data: " + err.message; });
-
-document.getElementById("metric").addEventListener("change", e => render(e.target.value));
-// Keep the whole state in view when the screen size changes (phone rotation, resizing).
-let resizeTimer;
-window.addEventListener("resize", () => {
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(() => { map.invalidateSize(); if (areasLayer) map.fitBounds(areasLayer.getBounds(), { padding: [10, 10] }); }, 200);
-});
-</script>
+<script type="module" src="app.js?v=e94a6b323006"></script>
 </body>
 </html>

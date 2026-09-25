@@ -1,0 +1,2577 @@
+{
+ "feed_in_case": {
+  "load_lv": 0.1,
+  "load_mv": 0.15,
+  "pv": 0.85,
+  "other": 1.0
+ },
+ "limits": {
+  "v_min": 0.9,
+  "v_max": 1.1,
+  "loading_max": 100.0
+ },
+ "districts": [
+  {
+   "grid": "31413",
+   "rooftop_today_mw": 4.71,
+   "ground_today_mw": 3.34,
+   "wind_mw": 0.0,
+   "peak_load_mw": 13.64,
+   "hvmv_mva": 50.0,
+   "today_before_reinforcement": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.057,
+    "line": 91.8,
+    "trafo_hvmv": 10.5,
+    "trafo_mvlv": 48.0
+   },
+   "reinforced": {
+    "transformers": 0,
+    "lines": 0,
+    "lv_grids_doubled": 0
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.057,
+    "line": 91.8,
+    "trafo_hvmv": 10.5,
+    "trafo_mvlv": 48.0
+   },
+   "lv_grids": 45,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.6,
+    "0.25": 2.0,
+    "0.5": 3.0,
+    "0.75": 10.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.822,
+   "lv_grids_no_room": 0.022,
+   "rooftop_extra_mw": 6.23,
+   "substation_today_loading": 10.5,
+   "substation_today_export_mw": 5.23,
+   "substation_mw": 52.44,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 21.0,
+   "substation_n1_today_export_mw": 5.23,
+   "substation_n1_mw": 23.14,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 7
+  },
+  {
+   "grid": "31706",
+   "rooftop_today_mw": 4.77,
+   "ground_today_mw": 0.0,
+   "wind_mw": 0.0,
+   "peak_load_mw": 15.13,
+   "hvmv_mva": 50.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "line"
+    ],
+    "vmax": 1.044,
+    "line": 102.8,
+    "trafo_hvmv": 5.8,
+    "trafo_mvlv": 26.0
+   },
+   "reinforced": {
+    "transformers": 0,
+    "lines": 4,
+    "lv_grids_doubled": 0
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.038,
+    "line": 76.9,
+    "trafo_hvmv": 5.8,
+    "trafo_mvlv": 26.1
+   },
+   "lv_grids": 34,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.3250000000000002,
+    "0.25": 7.0,
+    "0.5": 7.0,
+    "0.75": 7.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.824,
+   "lv_grids_no_room": 0.0,
+   "rooftop_extra_mw": 13.56,
+   "substation_today_loading": 5.8,
+   "substation_today_export_mw": 2.9,
+   "substation_mw": 55.08,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 11.6,
+   "substation_n1_today_export_mw": 2.9,
+   "substation_n1_mw": 25.78,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 7
+  },
+  {
+   "grid": "31742",
+   "rooftop_today_mw": 13.67,
+   "ground_today_mw": 20.8,
+   "wind_mw": 84.25,
+   "peak_load_mw": 23.89,
+   "hvmv_mva": 166.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage",
+     "MV/LV transformer",
+     "line"
+    ],
+    "vmax": 1.189,
+    "line": 284.6,
+    "trafo_hvmv": 66.0,
+    "trafo_mvlv": 163.7
+   },
+   "reinforced": {
+    "transformers": 2,
+    "lines": 31,
+    "lv_grids_doubled": 5
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.087,
+    "line": 94.3,
+    "trafo_hvmv": 66.0,
+    "trafo_mvlv": 94.7
+   },
+   "lv_grids": 74,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.5,
+    "0.25": 2.0,
+    "0.5": 5.0,
+    "0.75": 10.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.757,
+   "lv_grids_no_room": 0.027,
+   "rooftop_extra_mw": 15.53,
+   "substation_today_loading": 66.0,
+   "substation_today_export_mw": 109.49,
+   "substation_mw": 66.8,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 106.1,
+   "substation_n1_today_export_mw": 109.32,
+   "substation_n1_mw": 0.0,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 9
+  },
+  {
+   "grid": "32070",
+   "rooftop_today_mw": 26.07,
+   "ground_today_mw": 80.39,
+   "wind_mw": 20.25,
+   "peak_load_mw": 41.67,
+   "hvmv_mva": 126.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage",
+     "MV/LV transformer",
+     "line"
+    ],
+    "vmax": 1.215,
+    "line": 204.6,
+    "trafo_hvmv": 85.5,
+    "trafo_mvlv": 140.0
+   },
+   "reinforced": {
+    "transformers": 5,
+    "lines": 42,
+    "lv_grids_doubled": 11
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.092,
+    "line": 98.4,
+    "trafo_hvmv": 85.8,
+    "trafo_mvlv": 91.4
+   },
+   "lv_grids": 114,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.1,
+    "0.25": 1.75,
+    "0.5": 2.5,
+    "0.75": 7.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.649,
+   "lv_grids_no_room": 0.044,
+   "rooftop_extra_mw": 21.27,
+   "substation_today_loading": 85.8,
+   "substation_today_export_mw": 107.75,
+   "substation_mw": 20.8,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 173.6,
+   "substation_n1_today_export_mw": 107.31,
+   "substation_n1_mw": 0.0,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 16
+  },
+  {
+   "grid": "32485",
+   "rooftop_today_mw": 6.87,
+   "ground_today_mw": 6.02,
+   "wind_mw": 8.0,
+   "peak_load_mw": 20.88,
+   "hvmv_mva": 80.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "line"
+    ],
+    "vmax": 1.088,
+    "line": 102.0,
+    "trafo_hvmv": 20.6,
+    "trafo_mvlv": 53.1
+   },
+   "reinforced": {
+    "transformers": 0,
+    "lines": 1,
+    "lv_grids_doubled": 0
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.088,
+    "line": 91.6,
+    "trafo_hvmv": 20.6,
+    "trafo_mvlv": 53.2
+   },
+   "lv_grids": 49,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.5,
+    "0.25": 4.0,
+    "0.5": 5.0,
+    "0.75": 5.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.878,
+   "lv_grids_no_room": 0.02,
+   "rooftop_extra_mw": 18.39,
+   "substation_today_loading": 20.6,
+   "substation_today_export_mw": 16.5,
+   "substation_mw": 74.41,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 41.2,
+   "substation_n1_today_export_mw": 16.48,
+   "substation_n1_mw": 27.54,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 10
+  },
+  {
+   "grid": "32510",
+   "rooftop_today_mw": 9.66,
+   "ground_today_mw": 2.95,
+   "wind_mw": 0.0,
+   "peak_load_mw": 49.47,
+   "hvmv_mva": 151.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage",
+     "line"
+    ],
+    "vmax": 1.131,
+    "line": 105.9,
+    "trafo_hvmv": 8.2,
+    "trafo_mvlv": 92.6
+   },
+   "reinforced": {
+    "transformers": 0,
+    "lines": 2,
+    "lv_grids_doubled": 1
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.069,
+    "line": 96.8,
+    "trafo_hvmv": 8.2,
+    "trafo_mvlv": 98.2
+   },
+   "lv_grids": 86,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.5,
+    "0.25": 3.0,
+    "0.5": 7.0,
+    "0.75": 10.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.849,
+   "lv_grids_no_room": 0.023,
+   "rooftop_extra_mw": 23.83,
+   "substation_today_loading": 8.2,
+   "substation_today_export_mw": 6.51,
+   "substation_mw": 169.92,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 14.2,
+   "substation_n1_today_export_mw": 6.51,
+   "substation_n1_mw": 96.09,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 8
+  },
+  {
+   "grid": "32536",
+   "rooftop_today_mw": 12.0,
+   "ground_today_mw": 1.61,
+   "wind_mw": 0.0,
+   "peak_load_mw": 27.62,
+   "hvmv_mva": 80.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage",
+     "line"
+    ],
+    "vmax": 1.171,
+    "line": 105.4,
+    "trafo_hvmv": 17.5,
+    "trafo_mvlv": 39.4
+   },
+   "reinforced": {
+    "transformers": 0,
+    "lines": 1,
+    "lv_grids_doubled": 2
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.083,
+    "line": 92.4,
+    "trafo_hvmv": 17.5,
+    "trafo_mvlv": 39.4
+   },
+   "lv_grids": 56,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.875,
+    "0.25": 3.0,
+    "0.5": 3.0,
+    "0.75": 4.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.893,
+   "lv_grids_no_room": 0.018,
+   "rooftop_extra_mw": 18.07,
+   "substation_today_loading": 17.5,
+   "substation_today_export_mw": 8.5,
+   "substation_mw": 84.38,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 35.3,
+   "substation_n1_today_export_mw": 8.49,
+   "substation_n1_mw": 36.33,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 11
+  },
+  {
+   "grid": "32540",
+   "rooftop_today_mw": 5.63,
+   "ground_today_mw": 2.67,
+   "wind_mw": 0.0,
+   "peak_load_mw": 8.24,
+   "hvmv_mva": 50.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "line"
+    ],
+    "vmax": 1.089,
+    "line": 175.4,
+    "trafo_hvmv": 13.1,
+    "trafo_mvlv": 96.8
+   },
+   "reinforced": {
+    "transformers": 0,
+    "lines": 6,
+    "lv_grids_doubled": 0
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.071,
+    "line": 89.9,
+    "trafo_hvmv": 13.1,
+    "trafo_mvlv": 99.7
+   },
+   "lv_grids": 36,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.25,
+    "0.25": 3.0,
+    "0.5": 4.0,
+    "0.75": 10.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.833,
+   "lv_grids_no_room": 0.028,
+   "rooftop_extra_mw": 7.74,
+   "substation_today_loading": 13.1,
+   "substation_today_export_mw": 6.54,
+   "substation_mw": 50.68,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 26.1,
+   "substation_n1_today_export_mw": 6.53,
+   "substation_n1_mw": 21.53,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 6
+  },
+  {
+   "grid": "32727",
+   "rooftop_today_mw": 12.7,
+   "ground_today_mw": 0.01,
+   "wind_mw": 18.56,
+   "peak_load_mw": 32.44,
+   "hvmv_mva": 126.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage",
+     "line"
+    ],
+    "vmax": 1.246,
+    "line": 236.2,
+    "trafo_hvmv": 19.8,
+    "trafo_mvlv": 76.5
+   },
+   "reinforced": {
+    "transformers": 0,
+    "lines": 4,
+    "lv_grids_doubled": 3
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.093,
+    "line": 92.7,
+    "trafo_hvmv": 19.9,
+    "trafo_mvlv": 83.5
+   },
+   "lv_grids": 61,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.75,
+    "0.25": 3.0,
+    "0.5": 3.0,
+    "0.75": 10.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.885,
+   "lv_grids_no_room": 0.016,
+   "rooftop_extra_mw": 16.18,
+   "substation_today_loading": 19.9,
+   "substation_today_export_mw": 24.99,
+   "substation_mw": 118.36,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 39.7,
+   "substation_n1_today_export_mw": 24.98,
+   "substation_n1_mw": 44.53,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 8
+  },
+  {
+   "grid": "32816",
+   "rooftop_today_mw": 15.32,
+   "ground_today_mw": 6.47,
+   "wind_mw": 12.0,
+   "peak_load_mw": 41.7,
+   "hvmv_mva": 126.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage",
+     "line"
+    ],
+    "vmax": 1.116,
+    "line": 124.0,
+    "trafo_hvmv": 21.4,
+    "trafo_mvlv": 51.9
+   },
+   "reinforced": {
+    "transformers": 0,
+    "lines": 4,
+    "lv_grids_doubled": 1
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.084,
+    "line": 95.0,
+    "trafo_hvmv": 21.4,
+    "trafo_mvlv": 52.0
+   },
+   "lv_grids": 90,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.725,
+    "0.25": 2.5,
+    "0.5": 3.0,
+    "0.75": 10.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.878,
+   "lv_grids_no_room": 0.022,
+   "rooftop_extra_mw": 25.78,
+   "substation_today_loading": 21.4,
+   "substation_today_export_mw": 26.94,
+   "substation_mw": 116.02,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 42.8,
+   "substation_n1_today_export_mw": 26.92,
+   "substation_n1_mw": 42.48,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 11
+  },
+  {
+   "grid": "33003",
+   "rooftop_today_mw": 14.29,
+   "ground_today_mw": 0.01,
+   "wind_mw": 1.5,
+   "peak_load_mw": 110.66,
+   "hvmv_mva": 252.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage",
+     "MV/LV transformer",
+     "line"
+    ],
+    "vmax": 1.152,
+    "line": 179.4,
+    "trafo_hvmv": 6.3,
+    "trafo_mvlv": 219.7
+   },
+   "reinforced": {
+    "transformers": 1,
+    "lines": 5,
+    "lv_grids_doubled": 1
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.083,
+    "line": 96.0,
+    "trafo_hvmv": 6.3,
+    "trafo_mvlv": 91.0
+   },
+   "lv_grids": 216,
+   "lv_grid_factor_quantiles": {
+    "0.1": 2.0,
+    "0.25": 7.0,
+    "0.5": 10.0,
+    "0.75": 10.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.917,
+   "lv_grids_no_room": 0.009,
+   "rooftop_extra_mw": 54.98,
+   "substation_today_loading": 6.3,
+   "substation_today_export_mw": 14.03,
+   "substation_mw": 278.91,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 8.4,
+   "substation_n1_today_export_mw": 14.03,
+   "substation_n1_mw": 205.08,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 13
+  },
+  {
+   "grid": "33005",
+   "rooftop_today_mw": 6.85,
+   "ground_today_mw": 2.14,
+   "wind_mw": 0.0,
+   "peak_load_mw": 22.69,
+   "hvmv_mva": 80.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "line"
+    ],
+    "vmax": 1.059,
+    "line": 150.0,
+    "trafo_hvmv": 6.4,
+    "trafo_mvlv": 45.8
+   },
+   "reinforced": {
+    "transformers": 0,
+    "lines": 1,
+    "lv_grids_doubled": 0
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.059,
+    "line": 84.7,
+    "trafo_hvmv": 6.4,
+    "trafo_mvlv": 45.9
+   },
+   "lv_grids": 37,
+   "lv_grid_factor_quantiles": {
+    "0.1": 2.3,
+    "0.25": 3.0,
+    "0.5": 3.0,
+    "0.75": 4.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.919,
+   "lv_grids_no_room": 0.0,
+   "rooftop_extra_mw": 12.67,
+   "substation_today_loading": 6.4,
+   "substation_today_export_mw": 5.09,
+   "substation_mw": 87.3,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 12.9,
+   "substation_n1_today_export_mw": 5.09,
+   "substation_n1_mw": 40.72,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 7
+  },
+  {
+   "grid": "33006",
+   "rooftop_today_mw": 16.7,
+   "ground_today_mw": 7.94,
+   "wind_mw": 0.0,
+   "peak_load_mw": 47.54,
+   "hvmv_mva": 151.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage",
+     "MV/LV transformer",
+     "line"
+    ],
+    "vmax": 1.322,
+    "line": 315.8,
+    "trafo_hvmv": 11.7,
+    "trafo_mvlv": 271.9
+   },
+   "reinforced": {
+    "transformers": 1,
+    "lines": 9,
+    "lv_grids_doubled": 6
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.093,
+    "line": 97.0,
+    "trafo_hvmv": 11.7,
+    "trafo_mvlv": 83.6
+   },
+   "lv_grids": 95,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.85,
+    "0.25": 2.5,
+    "0.5": 4.0,
+    "0.75": 5.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.895,
+   "lv_grids_no_room": 0.032,
+   "rooftop_extra_mw": 26.44,
+   "substation_today_loading": 11.7,
+   "substation_today_export_mw": 16.2,
+   "substation_mw": 158.2,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 20.1,
+   "substation_n1_today_export_mw": 16.19,
+   "substation_n1_mw": 84.38,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 10
+  },
+  {
+   "grid": "33015",
+   "rooftop_today_mw": 2.72,
+   "ground_today_mw": 3.7,
+   "wind_mw": 0.0,
+   "peak_load_mw": 29.19,
+   "hvmv_mva": 126.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage",
+     "line"
+    ],
+    "vmax": 1.231,
+    "line": 137.6,
+    "trafo_hvmv": 35.7,
+    "trafo_mvlv": 62.3
+   },
+   "reinforced": {
+    "transformers": 0,
+    "lines": 3,
+    "lv_grids_doubled": 1
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.095,
+    "line": 60.8,
+    "trafo_hvmv": 35.7,
+    "trafo_mvlv": 70.2
+   },
+   "lv_grids": 64,
+   "lv_grid_factor_quantiles": {
+    "0.1": 6.5000000000000036,
+    "0.25": 10.0,
+    "0.5": 10.0,
+    "0.75": 10.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.953,
+   "lv_grids_no_room": 0.016,
+   "rooftop_extra_mw": 10.71,
+   "substation_today_loading": 35.7,
+   "substation_today_export_mw": 44.96,
+   "substation_mw": 94.92,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 71.4,
+   "substation_n1_today_export_mw": 44.9,
+   "substation_n1_mw": 20.95,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 6
+  },
+  {
+   "grid": "33019",
+   "rooftop_today_mw": 10.55,
+   "ground_today_mw": 0.0,
+   "wind_mw": 6.6,
+   "peak_load_mw": 23.5,
+   "hvmv_mva": 80.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage",
+     "MV/LV transformer",
+     "line"
+    ],
+    "vmax": 1.246,
+    "line": 445.8,
+    "trafo_hvmv": 16.6,
+    "trafo_mvlv": 300.6
+   },
+   "reinforced": {
+    "transformers": 1,
+    "lines": 12,
+    "lv_grids_doubled": 4
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.074,
+    "line": 96.5,
+    "trafo_hvmv": 16.7,
+    "trafo_mvlv": 90.0
+   },
+   "lv_grids": 68,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.675,
+    "0.25": 3.75,
+    "0.5": 4.0,
+    "0.75": 5.0,
+    "0.9": 5.0
+   },
+   "lv_grids_at_least_double": 0.853,
+   "lv_grids_no_room": 0.015,
+   "rooftop_extra_mw": 21.47,
+   "substation_today_loading": 16.7,
+   "substation_today_export_mw": 13.34,
+   "substation_mw": 77.93,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 33.4,
+   "substation_n1_today_export_mw": 13.34,
+   "substation_n1_mw": 31.05,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 10
+  },
+  {
+   "grid": "33025",
+   "rooftop_today_mw": 11.96,
+   "ground_today_mw": 0.0,
+   "wind_mw": 0.0,
+   "peak_load_mw": 36.13,
+   "hvmv_mva": 126.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage",
+     "line"
+    ],
+    "vmax": 1.149,
+    "line": 141.1,
+    "trafo_hvmv": 5.2,
+    "trafo_mvlv": 50.2
+   },
+   "reinforced": {
+    "transformers": 0,
+    "lines": 5,
+    "lv_grids_doubled": 1
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.081,
+    "line": 90.7,
+    "trafo_hvmv": 5.2,
+    "trafo_mvlv": 50.4
+   },
+   "lv_grids": 70,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.9500000000000002,
+    "0.25": 4.0,
+    "0.5": 4.0,
+    "0.75": 6.5,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.9,
+   "lv_grids_no_room": 0.0,
+   "rooftop_extra_mw": 18.55,
+   "substation_today_loading": 5.2,
+   "substation_today_export_mw": 6.52,
+   "substation_mw": 139.45,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 10.4,
+   "substation_n1_today_export_mw": 6.52,
+   "substation_n1_mw": 66.21,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 7
+  },
+  {
+   "grid": "33035",
+   "rooftop_today_mw": 45.58,
+   "ground_today_mw": 9.96,
+   "wind_mw": 49.33,
+   "peak_load_mw": 78.35,
+   "hvmv_mva": 189.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage",
+     "MV/LV transformer",
+     "line"
+    ],
+    "vmax": 1.451,
+    "line": 961.0,
+    "trafo_hvmv": 49.7,
+    "trafo_mvlv": 472.6
+   },
+   "reinforced": {
+    "transformers": 17,
+    "lines": 216,
+    "lv_grids_doubled": 17
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.098,
+    "line": 99.4,
+    "trafo_hvmv": 50.5,
+    "trafo_mvlv": 91.1
+   },
+   "lv_grids": 200,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.4750000000000005,
+    "0.25": 2.875,
+    "0.5": 3.0,
+    "0.75": 5.0,
+    "0.9": 7.0
+   },
+   "lv_grids_at_least_double": 0.835,
+   "lv_grids_no_room": 0.035,
+   "rooftop_extra_mw": 43.02,
+   "substation_today_loading": 50.5,
+   "substation_today_export_mw": 95.16,
+   "substation_mw": 108.98,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 75.8,
+   "substation_n1_today_export_mw": 95.05,
+   "substation_n1_mw": 35.45,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 24
+  },
+  {
+   "grid": "33036",
+   "rooftop_today_mw": 12.72,
+   "ground_today_mw": 0.4,
+   "wind_mw": 0.0,
+   "peak_load_mw": 16.93,
+   "hvmv_mva": 50.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage",
+     "MV/LV transformer",
+     "line"
+    ],
+    "vmax": 1.209,
+    "line": 203.3,
+    "trafo_hvmv": 19.0,
+    "trafo_mvlv": 173.3
+   },
+   "reinforced": {
+    "transformers": 1,
+    "lines": 28,
+    "lv_grids_doubled": 4
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.088,
+    "line": 79.2,
+    "trafo_hvmv": 19.2,
+    "trafo_mvlv": 81.8
+   },
+   "lv_grids": 51,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.25,
+    "0.25": 2.0,
+    "0.5": 2.5,
+    "0.75": 5.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.824,
+   "lv_grids_no_room": 0.0,
+   "rooftop_extra_mw": 13.65,
+   "substation_today_loading": 19.2,
+   "substation_today_export_mw": 9.59,
+   "substation_mw": 47.46,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 38.4,
+   "substation_n1_today_export_mw": 9.58,
+   "substation_n1_mw": 18.02,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 10
+  },
+  {
+   "grid": "33076",
+   "rooftop_today_mw": 0.28,
+   "ground_today_mw": 0.0,
+   "wind_mw": 0.0,
+   "peak_load_mw": 16.35,
+   "hvmv_mva": 80.0,
+   "today_before_reinforcement": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.041,
+    "line": 76.1,
+    "trafo_hvmv": 3.0,
+    "trafo_mvlv": 7.5
+   },
+   "reinforced": {
+    "transformers": 0,
+    "lines": 0,
+    "lv_grids_doubled": 0
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.041,
+    "line": 76.1,
+    "trafo_hvmv": 3.0,
+    "trafo_mvlv": 7.5
+   },
+   "lv_grids": 6,
+   "lv_grid_factor_quantiles": {
+    "0.1": 5.625,
+    "0.25": 10.0,
+    "0.5": 10.0,
+    "0.75": 10.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.833,
+   "lv_grids_no_room": 0.0,
+   "rooftop_extra_mw": 0.37,
+   "substation_today_loading": 3.0,
+   "substation_today_export_mw": -2.12,
+   "substation_mw": 96.09,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 6.0,
+   "substation_n1_today_export_mw": -2.12,
+   "substation_n1_mw": 49.22,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 2
+  },
+  {
+   "grid": "33185",
+   "rooftop_today_mw": 13.19,
+   "ground_today_mw": 10.43,
+   "wind_mw": 0.0,
+   "peak_load_mw": 23.42,
+   "hvmv_mva": 80.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage",
+     "MV/LV transformer",
+     "line"
+    ],
+    "vmax": 1.183,
+    "line": 291.0,
+    "trafo_hvmv": 23.4,
+    "trafo_mvlv": 137.8
+   },
+   "reinforced": {
+    "transformers": 5,
+    "lines": 40,
+    "lv_grids_doubled": 4
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.097,
+    "line": 99.6,
+    "trafo_hvmv": 23.6,
+    "trafo_mvlv": 90.8
+   },
+   "lv_grids": 49,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.1,
+    "0.25": 2.0,
+    "0.5": 2.5,
+    "0.75": 7.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.755,
+   "lv_grids_no_room": 0.061,
+   "rooftop_extra_mw": 10.92,
+   "substation_today_loading": 23.6,
+   "substation_today_export_mw": 18.08,
+   "substation_mw": 72.66,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 47.0,
+   "substation_n1_today_export_mw": 18.07,
+   "substation_n1_mw": 25.93,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 7
+  },
+  {
+   "grid": "33286",
+   "rooftop_today_mw": 8.3,
+   "ground_today_mw": 0.01,
+   "wind_mw": 3.0,
+   "peak_load_mw": 26.75,
+   "hvmv_mva": 80.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage",
+     "line"
+    ],
+    "vmax": 1.12,
+    "line": 127.3,
+    "trafo_hvmv": 9.3,
+    "trafo_mvlv": 42.4
+   },
+   "reinforced": {
+    "transformers": 0,
+    "lines": 2,
+    "lv_grids_doubled": 1
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.076,
+    "line": 93.5,
+    "trafo_hvmv": 9.3,
+    "trafo_mvlv": 42.7
+   },
+   "lv_grids": 78,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.5,
+    "0.25": 4.0,
+    "0.5": 7.0,
+    "0.75": 9.25,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.859,
+   "lv_grids_no_room": 0.013,
+   "rooftop_extra_mw": 23.29,
+   "substation_today_loading": 9.3,
+   "substation_today_export_mw": 7.26,
+   "substation_mw": 84.96,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 18.6,
+   "substation_n1_today_export_mw": 7.25,
+   "substation_n1_mw": 38.38,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 11
+  },
+  {
+   "grid": "33318",
+   "rooftop_today_mw": 2.73,
+   "ground_today_mw": 3.6,
+   "wind_mw": 0.0,
+   "peak_load_mw": 10.26,
+   "hvmv_mva": 50.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage"
+    ],
+    "vmax": 1.138,
+    "line": 83.0,
+    "trafo_hvmv": 8.5,
+    "trafo_mvlv": 58.6
+   },
+   "reinforced": {
+    "transformers": 0,
+    "lines": 0,
+    "lv_grids_doubled": 1
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.087,
+    "line": 83.0,
+    "trafo_hvmv": 8.6,
+    "trafo_mvlv": 61.6
+   },
+   "lv_grids": 28,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.925,
+    "0.25": 4.75,
+    "0.5": 5.0,
+    "0.75": 7.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.893,
+   "lv_grids_no_room": 0.0,
+   "rooftop_extra_mw": 8.06,
+   "substation_today_loading": 8.6,
+   "substation_today_export_mw": 4.27,
+   "substation_mw": 53.32,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 17.1,
+   "substation_n1_today_export_mw": 4.27,
+   "substation_n1_mw": 24.17,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 6
+  },
+  {
+   "grid": "33338",
+   "rooftop_today_mw": 30.39,
+   "ground_today_mw": 40.87,
+   "wind_mw": 65.01,
+   "peak_load_mw": 76.51,
+   "hvmv_mva": 189.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage",
+     "MV/LV transformer",
+     "line"
+    ],
+    "vmax": 1.196,
+    "line": 262.8,
+    "trafo_hvmv": 74.1,
+    "trafo_mvlv": 205.2
+   },
+   "reinforced": {
+    "transformers": 2,
+    "lines": 24,
+    "lv_grids_doubled": 6
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.091,
+    "line": 99.0,
+    "trafo_hvmv": 74.2,
+    "trafo_mvlv": 94.0
+   },
+   "lv_grids": 224,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.75,
+    "0.25": 2.5,
+    "0.5": 5.0,
+    "0.75": 10.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.888,
+   "lv_grids_no_room": 0.027,
+   "rooftop_extra_mw": 47.36,
+   "substation_today_loading": 74.2,
+   "substation_today_export_mw": 139.49,
+   "substation_mw": 56.54,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 111.8,
+   "substation_n1_today_export_mw": 139.26,
+   "substation_n1_mw": 0.0,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 25
+  },
+  {
+   "grid": "33364",
+   "rooftop_today_mw": 15.97,
+   "ground_today_mw": 1.93,
+   "wind_mw": 0.0,
+   "peak_load_mw": 93.2,
+   "hvmv_mva": 214.0,
+   "today_before_reinforcement": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.07,
+    "line": 96.9,
+    "trafo_hvmv": 11.1,
+    "trafo_mvlv": 71.2
+   },
+   "reinforced": {
+    "transformers": 0,
+    "lines": 0,
+    "lv_grids_doubled": 0
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.07,
+    "line": 96.9,
+    "trafo_hvmv": 11.1,
+    "trafo_mvlv": 71.2
+   },
+   "lv_grids": 163,
+   "lv_grid_factor_quantiles": {
+    "0.1": 2.5,
+    "0.25": 5.0,
+    "0.5": 5.0,
+    "0.75": 10.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.92,
+   "lv_grids_no_room": 0.012,
+   "rooftop_extra_mw": 53.33,
+   "substation_today_loading": 11.1,
+   "substation_today_export_mw": 23.3,
+   "substation_mw": 223.83,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 15.8,
+   "substation_n1_today_export_mw": 23.29,
+   "substation_n1_mw": 150.0,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 11
+  },
+  {
+   "grid": "33369",
+   "rooftop_today_mw": 4.05,
+   "ground_today_mw": 0.27,
+   "wind_mw": 0.0,
+   "peak_load_mw": 15.59,
+   "hvmv_mva": 50.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "line"
+    ],
+    "vmax": 1.071,
+    "line": 103.0,
+    "trafo_hvmv": 3.3,
+    "trafo_mvlv": 86.6
+   },
+   "reinforced": {
+    "transformers": 0,
+    "lines": 2,
+    "lv_grids_doubled": 0
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.071,
+    "line": 97.6,
+    "trafo_hvmv": 3.3,
+    "trafo_mvlv": 86.6
+   },
+   "lv_grids": 18,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.425,
+    "0.25": 2.625,
+    "0.5": 3.0,
+    "0.75": 4.0,
+    "0.9": 5.800000000000004
+   },
+   "lv_grids_at_least_double": 0.833,
+   "lv_grids_no_room": 0.056,
+   "rooftop_extra_mw": 5.93,
+   "substation_today_loading": 3.3,
+   "substation_today_export_mw": 1.65,
+   "substation_mw": 56.54,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 6.6,
+   "substation_n1_today_export_mw": 1.65,
+   "substation_n1_mw": 27.25,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 5
+  },
+  {
+   "grid": "33378",
+   "rooftop_today_mw": 15.76,
+   "ground_today_mw": 1.65,
+   "wind_mw": 0.0,
+   "peak_load_mw": 124.52,
+   "hvmv_mva": 315.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage",
+     "MV/LV transformer",
+     "line"
+    ],
+    "vmax": 1.308,
+    "line": 187.6,
+    "trafo_hvmv": 19.4,
+    "trafo_mvlv": 101.6
+   },
+   "reinforced": {
+    "transformers": 1,
+    "lines": 5,
+    "lv_grids_doubled": 4
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.098,
+    "line": 97.2,
+    "trafo_hvmv": 19.4,
+    "trafo_mvlv": 96.1
+   },
+   "lv_grids": 113,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.5,
+    "0.25": 4.0,
+    "0.5": 5.0,
+    "0.75": 7.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.867,
+   "lv_grids_no_room": 0.027,
+   "rooftop_extra_mw": 38.15,
+   "substation_today_loading": 19.4,
+   "substation_today_export_mw": 2.12,
+   "substation_mw": 367.97,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 24.5,
+   "substation_n1_today_export_mw": 2.11,
+   "substation_n1_mw": 290.62,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 9
+  },
+  {
+   "grid": "33386",
+   "rooftop_today_mw": 5.75,
+   "ground_today_mw": 2.25,
+   "wind_mw": 7.5,
+   "peak_load_mw": 9.72,
+   "hvmv_mva": 50.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage"
+    ],
+    "vmax": 1.197,
+    "line": 82.5,
+    "trafo_hvmv": 25.5,
+    "trafo_mvlv": 24.6
+   },
+   "reinforced": {
+    "transformers": 0,
+    "lines": 0,
+    "lv_grids_doubled": 2
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.077,
+    "line": 78.2,
+    "trafo_hvmv": 25.6,
+    "trafo_mvlv": 27.1
+   },
+   "lv_grids": 25,
+   "lv_grid_factor_quantiles": {
+    "0.1": 2.4000000000000004,
+    "0.25": 5.0,
+    "0.5": 7.0,
+    "0.75": 10.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.92,
+   "lv_grids_no_room": 0.0,
+   "rooftop_extra_mw": 4.29,
+   "substation_today_loading": 25.6,
+   "substation_today_export_mw": 12.78,
+   "substation_mw": 43.65,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 51.1,
+   "substation_n1_today_export_mw": 12.77,
+   "substation_n1_mw": 14.36,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 4
+  },
+  {
+   "grid": "33410",
+   "rooftop_today_mw": 1.02,
+   "ground_today_mw": 0.0,
+   "wind_mw": 0.0,
+   "peak_load_mw": 3.86,
+   "hvmv_mva": 50.0,
+   "today_before_reinforcement": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.035,
+    "line": 46.1,
+    "trafo_hvmv": 6.3,
+    "trafo_mvlv": 27.4
+   },
+   "reinforced": {
+    "transformers": 0,
+    "lines": 0,
+    "lv_grids_doubled": 0
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.035,
+    "line": 46.1,
+    "trafo_hvmv": 6.3,
+    "trafo_mvlv": 27.4
+   },
+   "lv_grids": 11,
+   "lv_grid_factor_quantiles": {
+    "0.1": 2.5,
+    "0.25": 3.75,
+    "0.5": 5.0,
+    "0.75": 6.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 1.0,
+   "lv_grids_no_room": 0.0,
+   "rooftop_extra_mw": 3.71,
+   "substation_today_loading": 6.3,
+   "substation_today_export_mw": 3.14,
+   "substation_mw": 54.79,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 12.6,
+   "substation_n1_today_export_mw": 3.14,
+   "substation_n1_mw": 25.49,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 3
+  },
+  {
+   "grid": "33476",
+   "rooftop_today_mw": 17.84,
+   "ground_today_mw": 8.53,
+   "wind_mw": 0.0,
+   "peak_load_mw": 65.61,
+   "hvmv_mva": 151.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage",
+     "line"
+    ],
+    "vmax": 1.131,
+    "line": 125.2,
+    "trafo_hvmv": 12.1,
+    "trafo_mvlv": 57.7
+   },
+   "reinforced": {
+    "transformers": 0,
+    "lines": 3,
+    "lv_grids_doubled": 1
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.073,
+    "line": 89.1,
+    "trafo_hvmv": 12.1,
+    "trafo_mvlv": 57.7
+   },
+   "lv_grids": 173,
+   "lv_grid_factor_quantiles": {
+    "0.1": 2.0,
+    "0.25": 4.0,
+    "0.5": 7.0,
+    "0.75": 7.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.931,
+   "lv_grids_no_room": 0.0,
+   "rooftop_extra_mw": 50.46,
+   "substation_today_loading": 12.1,
+   "substation_today_export_mw": 18.22,
+   "substation_mw": 154.69,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 20.7,
+   "substation_n1_today_export_mw": 18.21,
+   "substation_n1_mw": 81.45,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 13
+  },
+  {
+   "grid": "33561",
+   "rooftop_today_mw": 22.46,
+   "ground_today_mw": 0.02,
+   "wind_mw": 6.4,
+   "peak_load_mw": 59.98,
+   "hvmv_mva": 166.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage",
+     "MV/LV transformer",
+     "line"
+    ],
+    "vmax": 1.106,
+    "line": 135.5,
+    "trafo_hvmv": 12.3,
+    "trafo_mvlv": 122.9
+   },
+   "reinforced": {
+    "transformers": 2,
+    "lines": 1,
+    "lv_grids_doubled": 1
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.075,
+    "line": 98.2,
+    "trafo_hvmv": 12.4,
+    "trafo_mvlv": 86.6
+   },
+   "lv_grids": 151,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.75,
+    "0.25": 2.0,
+    "0.5": 10.0,
+    "0.75": 10.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.854,
+   "lv_grids_no_room": 0.007,
+   "rooftop_extra_mw": 19.2,
+   "substation_today_loading": 12.4,
+   "substation_today_export_mw": 20.3,
+   "substation_mw": 171.09,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 19.9,
+   "substation_n1_today_export_mw": 20.3,
+   "substation_n1_mw": 97.27,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 13
+  },
+  {
+   "grid": "33622",
+   "rooftop_today_mw": 2.37,
+   "ground_today_mw": 0.0,
+   "wind_mw": 0.0,
+   "peak_load_mw": 43.06,
+   "hvmv_mva": 151.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage",
+     "line"
+    ],
+    "vmax": 1.113,
+    "line": 114.6,
+    "trafo_hvmv": 2.9,
+    "trafo_mvlv": 15.6
+   },
+   "reinforced": {
+    "transformers": 0,
+    "lines": 1,
+    "lv_grids_doubled": 1
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.041,
+    "line": 45.6,
+    "trafo_hvmv": 2.9,
+    "trafo_mvlv": 16.2
+   },
+   "lv_grids": 27,
+   "lv_grid_factor_quantiles": {
+    "0.1": 10.0,
+    "0.25": 10.0,
+    "0.5": 10.0,
+    "0.75": 10.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 1.0,
+   "lv_grids_no_room": 0.0,
+   "rooftop_extra_mw": 6.5,
+   "substation_today_loading": 2.9,
+   "substation_today_export_mw": -3.46,
+   "substation_mw": 180.47,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 5.0,
+   "substation_n1_today_export_mw": -3.46,
+   "substation_n1_mw": 106.64,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 3
+  },
+  {
+   "grid": "33630",
+   "rooftop_today_mw": 7.22,
+   "ground_today_mw": 0.01,
+   "wind_mw": 0.0,
+   "peak_load_mw": 25.78,
+   "hvmv_mva": 80.0,
+   "today_before_reinforcement": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.084,
+    "line": 97.2,
+    "trafo_hvmv": 5.0,
+    "trafo_mvlv": 93.5
+   },
+   "reinforced": {
+    "transformers": 0,
+    "lines": 0,
+    "lv_grids_doubled": 0
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.084,
+    "line": 97.2,
+    "trafo_hvmv": 5.0,
+    "trafo_mvlv": 93.5
+   },
+   "lv_grids": 44,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.7999999999999998,
+    "0.25": 2.5,
+    "0.5": 3.0,
+    "0.75": 10.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.886,
+   "lv_grids_no_room": 0.045,
+   "rooftop_extra_mw": 14.84,
+   "substation_today_loading": 5.0,
+   "substation_today_export_mw": 3.98,
+   "substation_mw": 89.06,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 10.0,
+   "substation_n1_today_export_mw": 3.98,
+   "substation_n1_mw": 42.19,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 8
+  },
+  {
+   "grid": "33737",
+   "rooftop_today_mw": 14.85,
+   "ground_today_mw": 24.09,
+   "wind_mw": 16.9,
+   "peak_load_mw": 26.49,
+   "hvmv_mva": 80.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage",
+     "MV/LV transformer",
+     "line"
+    ],
+    "vmax": 1.18,
+    "line": 329.7,
+    "trafo_hvmv": 58.8,
+    "trafo_mvlv": 122.3
+   },
+   "reinforced": {
+    "transformers": 1,
+    "lines": 12,
+    "lv_grids_doubled": 2
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.096,
+    "line": 88.0,
+    "trafo_hvmv": 58.8,
+    "trafo_mvlv": 84.8
+   },
+   "lv_grids": 80,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.25,
+    "0.25": 2.5,
+    "0.5": 4.0,
+    "0.75": 5.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.85,
+   "lv_grids_no_room": 0.013,
+   "rooftop_extra_mw": 23.1,
+   "substation_today_loading": 58.8,
+   "substation_today_export_mw": 46.84,
+   "substation_mw": 39.26,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 116.9,
+   "substation_n1_today_export_mw": 46.74,
+   "substation_n1_mw": 0.0,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 15
+  },
+  {
+   "grid": "33741",
+   "rooftop_today_mw": 30.72,
+   "ground_today_mw": 21.61,
+   "wind_mw": 37.0,
+   "peak_load_mw": 48.69,
+   "hvmv_mva": 151.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage",
+     "MV/LV transformer",
+     "line"
+    ],
+    "vmax": 1.205,
+    "line": 203.0,
+    "trafo_hvmv": 49.4,
+    "trafo_mvlv": 110.6
+   },
+   "reinforced": {
+    "transformers": 1,
+    "lines": 24,
+    "lv_grids_doubled": 7
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.085,
+    "line": 99.8,
+    "trafo_hvmv": 50.4,
+    "trafo_mvlv": 97.4
+   },
+   "lv_grids": 124,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.5,
+    "0.25": 2.0,
+    "0.5": 2.5,
+    "0.75": 3.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.798,
+   "lv_grids_no_room": 0.032,
+   "rooftop_extra_mw": 35.14,
+   "substation_today_loading": 50.4,
+   "substation_today_export_mw": 75.88,
+   "substation_mw": 88.48,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 86.2,
+   "substation_n1_today_export_mw": 75.79,
+   "substation_n1_mw": 14.5,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 18
+  },
+  {
+   "grid": "34076",
+   "rooftop_today_mw": 12.7,
+   "ground_today_mw": 1.98,
+   "wind_mw": 0.0,
+   "peak_load_mw": 36.93,
+   "hvmv_mva": 126.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage",
+     "MV/LV transformer",
+     "line"
+    ],
+    "vmax": 1.104,
+    "line": 119.3,
+    "trafo_hvmv": 11.6,
+    "trafo_mvlv": 139.8
+   },
+   "reinforced": {
+    "transformers": 1,
+    "lines": 3,
+    "lv_grids_doubled": 1
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.069,
+    "line": 97.1,
+    "trafo_hvmv": 11.6,
+    "trafo_mvlv": 93.1
+   },
+   "lv_grids": 86,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.625,
+    "0.25": 3.0,
+    "0.5": 4.0,
+    "0.75": 7.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.872,
+   "lv_grids_no_room": 0.058,
+   "rooftop_extra_mw": 23.07,
+   "substation_today_loading": 11.6,
+   "substation_today_export_mw": 14.41,
+   "substation_mw": 130.08,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 23.2,
+   "substation_n1_today_export_mw": 14.4,
+   "substation_n1_mw": 57.13,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 8
+  },
+  {
+   "grid": "34078",
+   "rooftop_today_mw": 12.17,
+   "ground_today_mw": 2.08,
+   "wind_mw": 3.45,
+   "peak_load_mw": 30.92,
+   "hvmv_mva": 126.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage",
+     "MV/LV transformer",
+     "line"
+    ],
+    "vmax": 1.116,
+    "line": 200.3,
+    "trafo_hvmv": 9.9,
+    "trafo_mvlv": 143.2
+   },
+   "reinforced": {
+    "transformers": 1,
+    "lines": 23,
+    "lv_grids_doubled": 1
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.061,
+    "line": 94.9,
+    "trafo_hvmv": 9.9,
+    "trafo_mvlv": 92.7
+   },
+   "lv_grids": 53,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.25,
+    "0.25": 3.0,
+    "0.5": 3.0,
+    "0.75": 5.0,
+    "0.9": 7.0
+   },
+   "lv_grids_at_least_double": 0.792,
+   "lv_grids_no_room": 0.057,
+   "rooftop_extra_mw": 14.78,
+   "substation_today_loading": 9.9,
+   "substation_today_export_mw": 11.79,
+   "substation_mw": 133.59,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 19.8,
+   "substation_n1_today_export_mw": 11.79,
+   "substation_n1_mw": 60.35,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 6
+  },
+  {
+   "grid": "34400",
+   "rooftop_today_mw": 9.88,
+   "ground_today_mw": 12.32,
+   "wind_mw": 82.35,
+   "peak_load_mw": 24.31,
+   "hvmv_mva": 166.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "line"
+    ],
+    "vmax": 1.083,
+    "line": 119.3,
+    "trafo_hvmv": 58.4,
+    "trafo_mvlv": 70.8
+   },
+   "reinforced": {
+    "transformers": 0,
+    "lines": 4,
+    "lv_grids_doubled": 0
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.082,
+    "line": 90.6,
+    "trafo_hvmv": 58.4,
+    "trafo_mvlv": 72.8
+   },
+   "lv_grids": 78,
+   "lv_grid_factor_quantiles": {
+    "0.1": 2.0,
+    "0.25": 3.0,
+    "0.5": 5.0,
+    "0.75": 10.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.91,
+   "lv_grids_no_room": 0.0,
+   "rooftop_extra_mw": 16.23,
+   "substation_today_loading": 58.4,
+   "substation_today_export_mw": 96.96,
+   "substation_mw": 80.86,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 94.3,
+   "substation_n1_today_export_mw": 96.82,
+   "substation_n1_mw": 6.92,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 9
+  },
+  {
+   "grid": "34407",
+   "rooftop_today_mw": 0.65,
+   "ground_today_mw": 4.4,
+   "wind_mw": 0.0,
+   "peak_load_mw": 3.13,
+   "hvmv_mva": 50.0,
+   "today_before_reinforcement": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.023,
+    "line": 78.4,
+    "trafo_hvmv": 17.6,
+    "trafo_mvlv": 10.8
+   },
+   "reinforced": {
+    "transformers": 0,
+    "lines": 0,
+    "lv_grids_doubled": 0
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.023,
+    "line": 78.4,
+    "trafo_hvmv": 17.6,
+    "trafo_mvlv": 10.8
+   },
+   "lv_grids": 6,
+   "lv_grid_factor_quantiles": {
+    "0.1": 4.0,
+    "0.25": 5.0,
+    "0.5": 5.0,
+    "0.75": 5.0,
+    "0.9": 7.5
+   },
+   "lv_grids_at_least_double": 1.0,
+   "lv_grids_no_room": 0.0,
+   "rooftop_extra_mw": 2.04,
+   "substation_today_loading": 17.6,
+   "substation_today_export_mw": 8.77,
+   "substation_mw": 48.05,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 35.1,
+   "substation_n1_today_export_mw": 8.76,
+   "substation_n1_mw": 18.9,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 3
+  },
+  {
+   "grid": "34691",
+   "rooftop_today_mw": 4.07,
+   "ground_today_mw": 0.0,
+   "wind_mw": 0.0,
+   "peak_load_mw": 16.14,
+   "hvmv_mva": 80.0,
+   "today_before_reinforcement": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.019,
+    "line": 74.3,
+    "trafo_hvmv": 1.8,
+    "trafo_mvlv": 29.1
+   },
+   "reinforced": {
+    "transformers": 0,
+    "lines": 0,
+    "lv_grids_doubled": 0
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.019,
+    "line": 74.3,
+    "trafo_hvmv": 1.8,
+    "trafo_mvlv": 29.1
+   },
+   "lv_grids": 16,
+   "lv_grid_factor_quantiles": {
+    "0.1": 4.0,
+    "0.25": 4.75,
+    "0.5": 5.0,
+    "0.75": 10.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.938,
+   "lv_grids_no_room": 0.0,
+   "rooftop_extra_mw": 4.67,
+   "substation_today_loading": 1.8,
+   "substation_today_export_mw": 1.29,
+   "substation_mw": 91.99,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 3.6,
+   "substation_n1_today_export_mw": 1.29,
+   "substation_n1_mw": 45.12,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 3
+  },
+  {
+   "grid": "34793",
+   "rooftop_today_mw": 18.55,
+   "ground_today_mw": 5.52,
+   "wind_mw": 0.0,
+   "peak_load_mw": 62.24,
+   "hvmv_mva": 151.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage",
+     "MV/LV transformer",
+     "line"
+    ],
+    "vmax": 1.211,
+    "line": 227.3,
+    "trafo_hvmv": 40.2,
+    "trafo_mvlv": 150.9
+   },
+   "reinforced": {
+    "transformers": 4,
+    "lines": 12,
+    "lv_grids_doubled": 4
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.095,
+    "line": 98.9,
+    "trafo_hvmv": 40.3,
+    "trafo_mvlv": 64.9
+   },
+   "lv_grids": 106,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.5,
+    "0.25": 2.5,
+    "0.5": 5.0,
+    "0.75": 7.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.84,
+   "lv_grids_no_room": 0.038,
+   "rooftop_extra_mw": 27.77,
+   "substation_today_loading": 40.3,
+   "substation_today_export_mw": 55.79,
+   "substation_mw": 111.91,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 68.6,
+   "substation_n1_today_export_mw": 55.74,
+   "substation_n1_mw": 36.04,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 12
+  },
+  {
+   "grid": "34859",
+   "rooftop_today_mw": 18.23,
+   "ground_today_mw": 0.64,
+   "wind_mw": 11.6,
+   "peak_load_mw": 59.86,
+   "hvmv_mva": 151.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "line"
+    ],
+    "vmax": 1.099,
+    "line": 109.3,
+    "trafo_hvmv": 24.6,
+    "trafo_mvlv": 62.8
+   },
+   "reinforced": {
+    "transformers": 0,
+    "lines": 2,
+    "lv_grids_doubled": 0
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.099,
+    "line": 99.8,
+    "trafo_hvmv": 24.6,
+    "trafo_mvlv": 63.2
+   },
+   "lv_grids": 79,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.7000000000000002,
+    "0.25": 3.0,
+    "0.5": 4.0,
+    "0.75": 7.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.873,
+   "lv_grids_no_room": 0.051,
+   "rooftop_extra_mw": 22.1,
+   "substation_today_loading": 24.6,
+   "substation_today_export_mw": 37.03,
+   "substation_mw": 132.42,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 42.3,
+   "substation_n1_today_export_mw": 37.0,
+   "substation_n1_mw": 59.18,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 10
+  },
+  {
+   "grid": "35446",
+   "rooftop_today_mw": 0.27,
+   "ground_today_mw": 0.0,
+   "wind_mw": 9.0,
+   "peak_load_mw": 0.64,
+   "hvmv_mva": 50.0,
+   "today_before_reinforcement": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.008,
+    "line": 48.3,
+    "trafo_hvmv": 18.2,
+    "trafo_mvlv": 2.4
+   },
+   "reinforced": {
+    "transformers": 0,
+    "lines": 0,
+    "lv_grids_doubled": 0
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.008,
+    "line": 48.3,
+    "trafo_hvmv": 18.2,
+    "trafo_mvlv": 2.4
+   },
+   "lv_grids": 5,
+   "lv_grid_factor_quantiles": {
+    "0.1": 10.0,
+    "0.25": 10.0,
+    "0.5": 10.0,
+    "0.75": 10.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 1.0,
+   "lv_grids_no_room": 0.0,
+   "rooftop_extra_mw": 0.56,
+   "substation_today_loading": 18.2,
+   "substation_today_export_mw": 9.1,
+   "substation_mw": 47.75,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 36.4,
+   "substation_n1_today_export_mw": 9.09,
+   "substation_n1_mw": 18.6,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 2
+  },
+  {
+   "grid": "35498",
+   "rooftop_today_mw": 20.96,
+   "ground_today_mw": 5.1,
+   "wind_mw": 3.0,
+   "peak_load_mw": 52.53,
+   "hvmv_mva": 151.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage",
+     "MV/LV transformer",
+     "line"
+    ],
+    "vmax": 1.124,
+    "line": 306.3,
+    "trafo_hvmv": 14.6,
+    "trafo_mvlv": 127.4
+   },
+   "reinforced": {
+    "transformers": 2,
+    "lines": 9,
+    "lv_grids_doubled": 2
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.096,
+    "line": 95.5,
+    "trafo_hvmv": 14.6,
+    "trafo_mvlv": 82.9
+   },
+   "lv_grids": 113,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.5,
+    "0.25": 2.5,
+    "0.5": 3.0,
+    "0.75": 5.0,
+    "0.9": 7.0
+   },
+   "lv_grids_at_least_double": 0.841,
+   "lv_grids_no_room": 0.027,
+   "rooftop_extra_mw": 36.02,
+   "substation_today_loading": 14.6,
+   "substation_today_export_mw": 19.67,
+   "substation_mw": 154.69,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 25.0,
+   "substation_n1_today_export_mw": 19.67,
+   "substation_n1_mw": 80.27,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 14
+  },
+  {
+   "grid": "35781",
+   "rooftop_today_mw": 13.03,
+   "ground_today_mw": 10.78,
+   "wind_mw": 0.0,
+   "peak_load_mw": 106.99,
+   "hvmv_mva": 269.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage",
+     "line"
+    ],
+    "vmax": 1.116,
+    "line": 156.7,
+    "trafo_hvmv": 27.6,
+    "trafo_mvlv": 76.1
+   },
+   "reinforced": {
+    "transformers": 0,
+    "lines": 5,
+    "lv_grids_doubled": 1
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.09,
+    "line": 94.0,
+    "trafo_hvmv": 27.6,
+    "trafo_mvlv": 77.6
+   },
+   "lv_grids": 127,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.75,
+    "0.25": 3.5,
+    "0.5": 10.0,
+    "0.75": 10.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.866,
+   "lv_grids_no_room": 0.024,
+   "rooftop_extra_mw": 27.48,
+   "substation_today_loading": 27.6,
+   "substation_today_export_mw": 11.47,
+   "substation_mw": 300.0,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 36.4,
+   "substation_n1_today_export_mw": 11.45,
+   "substation_n1_mw": 221.48,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 8
+  },
+  {
+   "grid": "35870",
+   "rooftop_today_mw": 19.75,
+   "ground_today_mw": 0.86,
+   "wind_mw": 3.0,
+   "peak_load_mw": 203.97,
+   "hvmv_mva": 480.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage",
+     "MV/LV transformer",
+     "line"
+    ],
+    "vmax": 1.176,
+    "line": 246.0,
+    "trafo_hvmv": 12.3,
+    "trafo_mvlv": 328.4
+   },
+   "reinforced": {
+    "transformers": 3,
+    "lines": 14,
+    "lv_grids_doubled": 2
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.096,
+    "line": 93.9,
+    "trafo_hvmv": 12.3,
+    "trafo_mvlv": 99.5
+   },
+   "lv_grids": 310,
+   "lv_grid_factor_quantiles": {
+    "0.1": 2.0,
+    "0.25": 7.0,
+    "0.5": 10.0,
+    "0.75": 10.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.91,
+   "lv_grids_no_room": 0.019,
+   "rooftop_extra_mw": 63.56,
+   "substation_today_loading": 12.3,
+   "substation_today_export_mw": 14.16,
+   "substation_mw": 548.44,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 13.4,
+   "substation_n1_today_export_mw": 14.15,
+   "substation_n1_mw": 501.56,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 17
+  },
+  {
+   "grid": "36104",
+   "rooftop_today_mw": 16.03,
+   "ground_today_mw": 18.69,
+   "wind_mw": 0.0,
+   "peak_load_mw": 30.7,
+   "hvmv_mva": 126.0,
+   "today_before_reinforcement": {
+    "ok": false,
+    "broken": [
+     "overvoltage",
+     "MV/LV transformer",
+     "line"
+    ],
+    "vmax": 1.157,
+    "line": 144.8,
+    "trafo_hvmv": 20.7,
+    "trafo_mvlv": 103.1
+   },
+   "reinforced": {
+    "transformers": 2,
+    "lines": 8,
+    "lv_grids_doubled": 3
+   },
+   "today": {
+    "ok": true,
+    "broken": [],
+    "vmax": 1.083,
+    "line": 98.4,
+    "trafo_hvmv": 21.1,
+    "trafo_mvlv": 95.8
+   },
+   "lv_grids": 113,
+   "lv_grid_factor_quantiles": {
+    "0.1": 1.5,
+    "0.25": 2.0,
+    "0.5": 3.0,
+    "0.75": 5.0,
+    "0.9": 10.0
+   },
+   "lv_grids_at_least_double": 0.761,
+   "lv_grids_no_room": 0.027,
+   "rooftop_extra_mw": 25.83,
+   "substation_today_loading": 21.1,
+   "substation_today_export_mw": 26.26,
+   "substation_mw": 117.19,
+   "substation_limit": [
+    "HV/MV transformer"
+   ],
+   "substation_n1_today_loading": 42.1,
+   "substation_n1_today_export_mw": 26.25,
+   "substation_n1_mw": 43.36,
+   "substation_n1_limit": [
+    "HV/MV transformer"
+   ],
+   "seconds": 11
+  }
+ ]
+}
