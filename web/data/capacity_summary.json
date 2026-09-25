@@ -1,0 +1,22 @@
+{
+ "districts": 47,
+ "with_data": 46,
+ "missing": [
+  "33392"
+ ],
+ "net_mw": 898.0,
+ "new_mw_12m": 111.4,
+ "firm_mw": 2956,
+ "no_firm_room": 4,
+ "rooftop_room_mw": 977,
+ "lv_grids": 3852,
+ "lv_double_share": 0.864,
+ "flex_prorata_mw": 2610,
+ "flex_lifo_mw": 1765,
+ "loss_target": 0.03,
+ "reinforced": {
+  "transformers": 53,
+  "lines": 568,
+  "lv_grids_doubled": 101
+ }
+}
