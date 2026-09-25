@@ -34,6 +34,8 @@ It also draws the grid itself:
 
 The curtailment rule decides about 850 MW: shared equally, flexible plants fit far more than if the newest plant in the queue is always curtailed first.
 
+In 2025, 78% of the hours in which flexible plants would be curtailed had a negative day-ahead price: the lost energy was worth −€1.1 million at market prices. Each problem found and the cheapest fix: [problems and solutions](https://github.com/maycu-byte/lv-grid-stress-test/blob/main/docs/problems-and-solutions.md).
+
 ![Room with flexible connections and the district panel](docs/screenshot-flexible.png)
 
 ## How it works
