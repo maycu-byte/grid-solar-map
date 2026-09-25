@@ -11,7 +11,8 @@ HV/MV substations, data/grid/):
 A district is named after the OSM 110 kV substation inside it, else after the
 municipality closest to its centre.
 
-Writes web/data/districts.geojson and web/data/capacity_summary.json.
+Writes web/data/districts.geojson, web/data/capacity_summary.json and
+web/data/flex_days.json (each district's worst day for flexible plants).
 """
 import json
 
@@ -106,6 +107,15 @@ def main() -> None:
         "loss_target": LOSS_TARGET,
         "reinforced": {k: sum(p["reinforced"][k] for p in have) for k in have[0]["reinforced"]},
     }
+    # Each district's worst day for flexible plants, with the export allowed in each hour,
+    # for the grid-edge gateway's flexible-connection mode.
+    days = json.loads((GRID / "flex_days.json").read_text())
+    flex_days = {}
+    for p in have:
+        day = days[p["id"]]
+        date = (pd.Timestamp("2025-01-01") + pd.Timedelta(days=day["day"])).strftime("%Y-%m-%d")
+        flex_days[p["id"]] = {"name": p["name"], "firm_mw": p["firm_mw"], "date": date, **{k: v for k, v in day.items() if k != "day"}}
+    (WEB_DATA / "flex_days.json").write_text(json.dumps(flex_days), encoding="utf-8")
     (WEB_DATA / "districts.geojson").write_text(json.dumps({"type": "FeatureCollection", "features": features}), encoding="utf-8")
     (WEB_DATA / "capacity_summary.json").write_text(json.dumps(summary, indent=1), encoding="utf-8")
     print(json.dumps(summary, indent=1))

@@ -131,7 +131,7 @@ function renderDetail() {
     <p class="note">${L.reinforced(r.transformers, r.lines, r.lv_grids_doubled)}</p>
     <h2 style="margin-top:6px">${L.flexTitle}</h2>
     <table><thead><tr>${L.flexHead.map((h) => `<th>${h}</th>`).join("")}</tr></thead><tbody>${rows}</tbody></table>
-    <p class="links"><a href="${GATEWAY}?lang=${lang}&district=${p.id}#calculator" target="_blank" rel="noopener">${L.openGateway} →</a><br>
+    <p class="links"><a href="${GATEWAY}?lang=${lang}&district=${p.id}#flex" target="_blank" rel="noopener">${L.openGateway} →</a><br>
     <a href="${STUDY}" target="_blank" rel="noopener">${L.openStudy} →</a></p>`;
 }
 
