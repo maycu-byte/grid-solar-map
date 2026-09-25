@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-build="3a84144dff82">
+<html lang="en" data-build="0f2f5737c911">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -72,9 +72,16 @@
   footer { font-size: .76rem; color: var(--ink3); border-top: 1px solid var(--hair); padding-top: 10px; }
   #map { height: 100%; min-height: 60vh; }
   .leaflet-tooltip { font: 13px var(--sans); }
+  .chk { display: flex; gap: 8px; align-items: flex-start; font-size: .88rem; margin-top: 6px; cursor: pointer; }
+  .chk input { margin-top: 3px; }
+  .key { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: .76rem; color: var(--ink3); margin: 4px 0 0 24px; }
+  .key span { display: inline-flex; align-items: center; gap: 5px; }
+  .key i { display: inline-block; width: 14px; height: 3px; }
+  .key i.dot { width: 9px; height: 9px; border-radius: 50%; }
+  .key i.dash { background: repeating-linear-gradient(90deg, currentColor 0 4px, transparent 4px 7px) !important; height: 2px; }
   [hidden] { display: none !important; }
 </style>
-<script type="importmap">{"imports": {"./app.js": "./app.js?v=3a84144dff82", "./i18n.js": "./i18n.js?v=3a84144dff82", "./blocks.js": "./blocks.js?v=3a84144dff82"}}</script>
+<script type="importmap">{"imports": {"./app.js": "./app.js?v=0f2f5737c911", "./i18n.js": "./i18n.js?v=0f2f5737c911", "./layers.js": "./layers.js?v=0f2f5737c911", "./blocks.js": "./blocks.js?v=0f2f5737c911"}}</script>
 </head>
 <body>
 <aside>
@@ -94,6 +101,19 @@
       <div class="legend" id="legend"></div>
       <div class="legend-labels"><span id="lmin"></span><span id="lmax"></span></div>
     </section>
+    <section style="margin-top:16px" id="layers-box">
+      <h2 data-t="layers">Grid layers</h2>
+      <label class="chk"><input type="checkbox" id="ly-hv" checked> <span data-t="lyHv">High-voltage lines and cables (OpenStreetMap, real)</span></label>
+      <div class="key" id="key-hv"></div>
+      <label class="chk"><input type="checkbox" id="ly-mv"> <span data-t="lyMv">Medium-voltage network (ding0, modelled), by loading</span></label>
+      <div class="key" id="key-mv" hidden></div>
+      <label class="chk"><input type="checkbox" id="ly-tr"> <span data-t="lyTr">MV/LV transformers (ding0, modelled)</span></label>
+      <div id="tr-box" hidden>
+        <div class="seg" id="tr-mode" style="margin-top:4px"><button data-v="ratio" aria-pressed="true" data-t="trRatio">Solar per transformer</button><button data-v="load" aria-pressed="false" data-t="trLoad">Loading</button></div>
+        <div class="key" id="key-tr"></div>
+      </div>
+      <p class="note" style="margin-top:6px" data-t="layersNote"></p>
+    </section>
     <section style="margin-top:14px" id="rule-box">
       <h2 data-t="rule">Curtailment rule</h2>
       <div class="seg" id="rule-seg"><button data-v="pro" aria-pressed="true" data-t="rulePro">Pro rata</button><button data-v="lifo" aria-pressed="false" data-t="ruleLifo">Last in, first out</button></div>
@@ -111,6 +131,6 @@
 <div id="map" role="region" aria-label="Map of solar and grid capacity per district"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<script type="module" src="app.js?v=3a84144dff82"></script>
+<script type="module" src="app.js?v=0f2f5737c911"></script>
 </body>
 </html>

@@ -16,6 +16,11 @@ An open-data map of the Saarland, Germany. It combines the country's official po
 
 This map shows, per substation area, where solar is, how much firm room is left, and how much more fits flexibly and at what loss of energy.
 
+It also draws the grid itself:
+- **the real high-voltage grid** from OpenStreetMap: 380, 220 and 110 kV lines and cables, and the 16.7 Hz railway lines;
+- **the modelled medium-voltage network** of the ding0 grids, coloured by loading in the worst feed-in case;
+- **every MV/LV transformer** (5,887), coloured by the rooftop solar behind it per kVA of transformer, or by its loading; black rings mark the 42 that the solar of 2025 already required to reinforce. ding0 draws each line straight between its two buses, so feeders fan out from the substation instead of following streets.
+
 ## Results (register of 10 February 2025, weather of 2025)
 
 | | |
@@ -52,7 +57,7 @@ Marktstammdatenregister (open-MaStR)     OpenStreetMap          ding0 grids (eGo
 ```
 
 1. **Extract.** The national register is read from the zip in chunks; only operating units of the state are kept.
-2. **Places.** 110 kV substations, postcode and municipality centres and the state boundary from OpenStreetMap.
+2. **Places and lines.** 110 kV substations, postcode and municipality centres and the state boundary from OpenStreetMap (`fetch_osm.py`); every power line and cable of the state (`fetch_power_lines.py`).
 3. **Register summary.** Snapshot date and state totals.
 4. **Grid capacity.** The power-flow study lives in [lv-grid-stress-test](https://github.com/maycu-byte/lv-grid-stress-test/blob/main/docs/regional.md): the ding0 grids of 46 of the 47 MV grid districts, the register placed on them, firm capacity per LV grid and per substation (n-1), and flexible connections over the hours of 2025. `build_capacity.py` joins its results (`data/grid/`) with the district shapes and names each district after the substation inside it.
 5. **Map.** A static page reads three small files. Each file is fetched with a version made from the content of the page's files (`web/stamp.sh`), so a browser never mixes an old and a new file.
@@ -77,7 +82,9 @@ curl -L -o ../data/raw/bnetza_mastr_solar_raw.csv.zip "https://zenodo.org/record
 python extract_solar.py
 python fetch_osm.py
 python build_areas.py
+python fetch_power_lines.py     # or: python fetch_power_lines.py <saved Overpass answer>
 python build_capacity.py        # reads data/grid/, produced by lv-grid-stress-test/regional
+# MV network and transformers: lv-grid-stress-test/regional/export_map.py → web/data/
 
 cd ../web && sh stamp.sh && python -m http.server 8000   # open http://localhost:8000
 ```

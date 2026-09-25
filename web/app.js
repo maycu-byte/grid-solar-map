@@ -1,5 +1,6 @@
 import { LOCALE, T } from "./i18n.js";
 import { modelsHtml, sourcesHtml } from "./blocks.js";
+import { districtOpacity, initLayers, refreshLayers } from "./layers.js";
 
 // Leaflet is the global L; in this module L holds the texts of the chosen language.
 const Leaflet = window.L;
@@ -44,6 +45,7 @@ function applyLanguage(v) {
     `<optgroup label="${L[g]}">${ms.map((m) => `<option value="${m}"${m === metric ? " selected" : ""}>${L["m_" + m]}</option>`).join("")}</optgroup>`).join("");
   $("#tab-models").innerHTML = modelsHtml(v);
   $("#tab-sources").innerHTML = sourcesHtml(v);
+  refreshLayers();
   if (districts) { renderStats(); render(); }
 }
 
@@ -75,7 +77,8 @@ function render() {
   if (layer) layer.remove();
   layer = Leaflet.geoJSON(districts, {
     style: (f) => ({
-      fillColor: colour(f.properties.data ? value(f.properties, metric) : null), fillOpacity: 0.8,
+      fillColor: colour(f.properties.data ? value(f.properties, metric) : null),
+      fillOpacity: districtOpacity(map),
       color: f.properties.id === selected ? "#000" : "#ffffff", weight: f.properties.id === selected ? 2.5 : 1,
       dashArray: f.properties.data ? null : "4 3",
     }),
@@ -135,7 +138,7 @@ function renderDetail() {
     <a href="${STUDY}" target="_blank" rel="noopener">${L.openStudy} →</a></p>`;
 }
 
-const map = Leaflet.map("map", { zoomSnap: 0.25 });
+const map = Leaflet.map("map", { zoomSnap: 0.25, preferCanvas: true });
 Leaflet.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> · grids: ding0 (CC BY-SA 4.0)',
   maxZoom: 14, opacity: 0.35,
@@ -163,6 +166,7 @@ Promise.all(["data/districts.geojson", "data/capacity_summary.json", "data/summa
   renderStats();
   render();
   map.fitBounds(layer.getBounds(), { padding: [10, 10] });
+  initLayers({ map, Leaflet, L: () => L, nf, cssVar, press, build: BUILD, districtLayer: () => layer });
 }).catch((err) => { $("#stats").textContent = L.loadError + err.message; });
 
 let resizeTimer;
